@@ -7,15 +7,15 @@ sources:
     tables:
       - name: orders
         columns:
-          - names: o_orderkey
+          - name: o_orderkey
             tests:
               - unique
               - not_null
       - name: lineitem
         columns:
-          - names: l_orderkey
+          - name: l_orderkey
             tests:
               - relationships:
-                  to: tpch.orders
+                  to: source('tpch','orders')
                   field: o_orderkey
 
