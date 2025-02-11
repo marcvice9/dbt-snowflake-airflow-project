@@ -67,18 +67,30 @@ All steps are orchestrated in Airflow.
 
 
 # Reproducibility
-Set Up the Environment: Install required tools: dbt, Snowflake, and Apache Airflow. Configure your machine with the necessary credentials to access Snowflake. Prepare Snowflake Database
+## 1. Environment Setup
+- Install the necessary tools: dbt, Snowflake, and Apache Airflow.
+- Configure your machine with the required credentials for Snowflake access.
 
-Load the TPC-H sample data into Snowflake. Ensure database, schema, and warehouse settings are properly configured. Configure dbt
+## 2. Snowflake Database Preparation
+- Load the TPC-H sample dataset into Snowflake.
+- Ensure the database, schema, and warehouse are properly configured.
 
-Set up a profiles.yml file to connect dbt to your Snowflake account. Place the dbt project files in the correct directory structure: models, macros, and tests. Run dbt Models
+## 3. dbt Configuration
+- Create a profiles.yml file to establish a connection between dbt and Snowflake.
+- Organize the dbt project into the appropriate directories: models, macros, and tests.
 
-Start with the raw (bronze) layer, progress to the staging (silver) layer, and finally build the marts (golden) layer. Perform testing to ensure data accuracy.
+## 4. Executing dbt Models
+- Follow a structured pipeline:
+      Raw (bronze) layer → Staging (silver) layer → Marts (gold) layer.
+- Conduct thorough data validation to maintain accuracy.
 
-Configure Airflow and Cosmos: Set up the necessary Airflow connections for Snowflake and other dependencies. Integrate Cosmos to manage dbt workflows efficiently.
+## 5. Airflow and Cosmos Integration
+- Set up Airflow connections for Snowflake and other dependencies.
+- Use Astronomer’s Cosmos to streamline and automate dbt workflow orchestration.
 
-Run the ETL Workflow: Use the Airflow UI to monitor and trigger DAGs. Cosmos handles the orchestration, automatically generating Airflow DAGs from dbt workflows.
-
+## 6. Running the ETL Workflow
+- Utilize the Airflow UI to monitor and trigger DAGs.
+- Let Cosmos handle the orchestration, automatically generating Airflow DAGs from dbt workflows.
 
 # Improvements
 ## Enhanced Testing:
