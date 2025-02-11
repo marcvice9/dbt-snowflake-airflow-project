@@ -53,8 +53,8 @@ All steps are orchestrated in Airflow.
 
 ## Pipeline Automation
 
+![image](https://github.com/user-attachments/assets/31f76b86-2869-42bb-a951-a919a548475d)
 
-After setting up my pipline, I made a daily trigger to run it and collect new data (if exists)
 
 
 # Reproducibility
