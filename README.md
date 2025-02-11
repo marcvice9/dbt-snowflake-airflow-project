@@ -6,10 +6,10 @@ This project implements a scalable data pipeline that converts raw data from Sno
 
 
 # Technologies Used
-Data Warehouse: Snowflake
-Transformation: dbt
-Containarization: Docker
-Workflow orchestration: Airflow, Astronomer's Cosmos
+- **Data Warehouse:** Snowflake
+- **Transformation**: dbt core
+- **Containarization:** Docker
+- **Workflow orchestration**: Airflow, Astronomer's Cosmos
 
 
 # 1. Data Ingestion
@@ -27,11 +27,19 @@ Data Source: Snowflake Sample Data - TPC-H dataset. Purpose: Preserve raw data a
 
 ![image](https://github.com/user-attachments/assets/82bee4f7-0ccf-4e51-b80f-85decdcadcac)
 
+### **Data Quality Generic Tests**:
+It includes tests to ensure that all values are distinct, not null and that validates the referential integrity through a relationship test.
 
 ## Golden Layer
 ![image](https://github.com/user-attachments/assets/16fafa24-6fbc-422d-962b-d4ae70fd1e03)
 
-# Generic & Unit Tests
+### DBT Macros
+Implemented re-usable business logic leveraging dbt macros. This business logic calculated the discounted amount based on a given extended_price and discount_percentage. 
+![image](https://github.com/user-attachments/assets/7358fb31-da21-426a-a4e0-f15f9359aff7)
+
+### **Data Quality Unit Tests**:
+- **Date Range Test**: Flags any rows where order_date is in the future or before 1990 (likely invalid data).
+- **Discount Amount Test**: Identifies orders where item_discount_amount is greater than zero, checking for incorrect discounts.
 
 ![image](https://github.com/user-attachments/assets/2f3a780a-b85c-4adb-a8fb-36da9b519f45)
 
