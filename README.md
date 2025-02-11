@@ -10,6 +10,7 @@ This project implements a scalable data pipeline that converts raw data from Sno
 - **Transformation**: dbt core
 - **Containarization:** Docker
 - **Workflow orchestration**: Airflow, Astronomer's Cosmos
+- **Languages**: SQL, Python, Bash
 
 
 # 1. Data Ingestion
