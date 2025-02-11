@@ -14,7 +14,7 @@ profile_config = ProfileConfig(
 )
 
 dbt_snowflake_dag = DbtDag(
-    project_config=ProjectConfig("/usr/Desktop/git_projects/dbt-snowflake-airflow-project/data_pipeline",),
+    project_config=ProjectConfig("/usr/local/airflow/dags/data_pipeline",),
     operator_args={"install_deps": True},
     profile_config=profile_config,
     execution_config=ExecutionConfig(dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",),
